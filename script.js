@@ -32,7 +32,7 @@ function tabla() {
         else if ((i % 4) == 0) {
             salida += '</div><div class= "row">';
         };
-        salida += '<div class="col-lg-3 col-sm-6 col-12 text-center contenedor" ><img class="image" src="' + films[i].imagen + '"><div class="middle"><div class="text title">' + films[i].title + '</div><div class="text date">' + films[i].release_date + '</div> <button class="botonInfo" onclick="info(films,' + i + ')">See more..</button></div></div>';
+        salida += '<div class="col-lg-3 col-sm-6 col-12 text-center contenedor" ><img class="image" src="' + films[i].imagen + '"><div class="middle"><div class="text title">' + films[i].title + '</div><div class="text date">' + films[i].release_date + '</div> <button class="botonInfo" onclick="info(films,' + i + ')" title="See more info">See more..</button></div></div>';
     };
     if (i != 0) {
         salida += "</div>";
@@ -78,7 +78,7 @@ function search() {
                 else if ((i % 4) == 0) {
                     salida += '</div><div class= "row">';
                 };
-                salida += '<div class="col-lg-3 col-sm-6 col-12 text-center contenedor" ><img class="image" src="' + pelicula[i].imagen + '"><div class="middle"><div class="text title">' + pelicula[i].title + '</div><div class="text date">' + pelicula[i].release_date + '</div> <button class="botonInfo" onclick="info(pelicula,'+ i + ')">See more..</button></div></div>';
+                salida += '<div class="col-lg-3 col-sm-6 col-12 text-center contenedor" ><img class="image" src="' + pelicula[i].imagen + '"><div class="middle"><div class="text title">' + pelicula[i].title + '</div><div class="text date">' + pelicula[i].release_date + '</div> <button class="botonInfo" onclick="info(pelicula,'+ i + ')" title="See more info">See more..</button></div></div>';
             };
             if (i != 0) {
                 salida += "</div>";
@@ -93,7 +93,7 @@ console.log(pelicula);
 
 function info(array, num) {
     
-    salida = '<div class="row text-center"><div class="container col-lg-3 col-md-12"><img class="infoImage" src="' + array[num].imagen + '"></div><div class=" container col-lg-9 col-md-12"><table class="table table-hover "><thead><tr><th>Title</th><th>Description</th><th>Directed by</th></tr></thead><tbody class="infoTable"><tr><td>' + array[num].title + '</td><td>' + array[num].opening_crawl + '</td><td>' + array[num].director + '</td></tr></tbody></table></div></div>';
+    salida = '<div class="row text-center"><div class="container col-lg-3 col-md-12"><img class="infoImage" src="' + array[num].imagen + '"></div><div class=" container col-lg-8 col-md-11 col-sm-11"><table class="table table-hover "><thead><tr><th>Title</th><th>Description</th><th>Directed by</th></tr></thead><tbody class="infoTable"><tr><td>' + array[num].title + '</td><td>' + array[num].opening_crawl + '</td><td>' + array[num].director + '</td></tr></tbody></table></div></div>';
     document.getElementById("oneFilm").innerHTML = salida;
     toggle();
 }
@@ -104,17 +104,17 @@ function info(array, num) {
 
 
 function toggle() {
-    $('#allFilms').fadeOut(1000);
-    $('#oneFilm').fadeIn(1000);
-    $('#filmSearch').hide(500);
+    $('#allFilms').hide();
+    $('#oneFilm').show();
+    $('#filmSearch').hide();
 }
 
 // función para esconder la página principal y la de busqueda para mostrar la de info
 
 function atras() {
-    $('#oneFilm').fadeOut(1000);
-    $('#allFilms').fadeIn(1000);
-    $('#filmSearch').fadeOut(1000);
+    $('#oneFilm').hide();
+    $('#allFilms').show();
+    $('#filmSearch').hide();
 };
 
 // Código jQuery para que al presionar enter en el buscador sea como hacer click en el boton de busqueda.

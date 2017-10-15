@@ -3,7 +3,8 @@
 
 <head>
     <title>Star Wars</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="img/descarga.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -29,14 +30,14 @@
 <body>
     <nav class="navegador row w3-top">
         <div class="col-md-4 col-sm-2 col-2 text-left">
-            <button class="fa fa-home" onclick="atras()"></button>
+            <button class="fa fa-home" onclick="atras()" title="Home"></button>
         </div>
         <div id="titleH1" class="col-4 text-center">
             <h1>Films</h1> 
         </div>
         <div id="divSearch" class="col-md-4 col-sm-10 col-10  text-right">
-            <input type="text" id="search" class="text-center w3-border w3-round-xxlarge" placeholder="Search here.."> 
-            <button class="fa fa-search" onclick="search()"></button>
+            <input type="text" id="search"  class="text-center w3-border w3-round-xxlarge" placeholder="Search here.."> 
+            <button class="fa fa-search" title="Search" onclick="search()"></button>
         </div>
     </nav>
     <section>
